@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+<!--        <record id="custom_approval_view_form_inherit" model="ir.ui.view">-->
+<!--            <field name="name">approval.inherit.view.form</field>-->
+<!--            <field name="model">teckit</field>-->
+<!--            <field name="inherit_id" ref="approvals.approval_request_view_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//header" position="inside">-->
+<!--                    <button string="To Expenses"-->
+<!--                            name="action_expenses"-->
+<!--                            type="object"-->
+<!--                            class="oe_highlight"-->
+<!--                            status="approved"-->
+<!--                            attrs="{'invisible':[('request_status','=','expenses'),]}"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <!--Expense Inherit Form View For Add New Partner Record-->
+        <record id="hr_expense_inherit_form" model="ir.ui.view">
+            <field name="name">hr.expense.inherit</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='employee_id']" position="after">
+                    <field name="partner_id"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
